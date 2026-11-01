@@ -63,7 +63,7 @@ print(subset(h2$lambda_path, selected))
 stopifnot(h2$coefficient_fit == "lasso", isTRUE(h2$nested_residual_cv),
           h2$stage2_lag_candidates == "full", h2$stage2_penalty == "all")
 
-# Point responses around a verified locally attracting fixed point.
+# Point responses around a verified locally stable fixed point.
 # Failure to find such a root is a diagnostic: do not silently change centering.
 system <- see_system_map(h2)
 print(system$diagnostics)

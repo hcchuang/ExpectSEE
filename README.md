@@ -56,7 +56,7 @@ The script proceeds in four steps:
 1. Estimate SALS and SFGALS; inspect coefficients, goodness of fit, and residual correlations.
 2. Test restricted specifications, generated-residual exclusion, and volatility symmetry with a restriction matrix.
 3. Estimate HDSALS and HDSFGALS using expanding-window validation, 100 penalty candidates, and `lambda.min`. Stage 2 reconstructs Stage-1 residuals within each outer training window and retains all lag candidates. Both stages report direct LASSO coefficients.
-4. Construct the reduced system and calculate positive and negative impulse responses around a verified locally attracting fixed point. The example requests point responses only and checks that the resulting paths are finite.
+4. Construct the reduced system and calculate positive and negative impulse responses around a verified locally stable fixed point. The example requests point responses only and checks that the resulting paths are finite.
 
 For a short demonstration, the script uses an expectile level of 0.80, 160 initial training outcomes, and 40-outcome validation blocks and steps. These are **demonstration settings**. The paper uses 0.99855; its broad samples use 156 initial training outcomes and 26-week blocks, while its shorter samples have separate settings described in the penalty-selection appendix.
 

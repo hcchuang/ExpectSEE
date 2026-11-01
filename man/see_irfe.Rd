@@ -24,7 +24,7 @@ see_irfe(fit, source = NULL, shock = 0.01, horizon = 12L,
 \code{"finite_difference"} retains complete-path coefficient perturbations as a check.}
 \item{center}{Initial history of both paths: \code{"zero"} starts every lag at zero
 and evolves the baseline under the original transition; \code{"fixed_point"} starts
-at a verified attracting fixed point \eqn{\bar y=G(\bar y)}.}
+at a verified locally stable fixed point \eqn{\bar y=G(\bar y)}.}
 \item{fixed_point}{Optional fixed point \eqn{\bar y} (one value per equation) for
 \code{center = "fixed_point"}; it is verified. If \code{NULL}, it is found by Newton's method.}
 \item{fp_tol}{Tolerance for \eqn{\max_i|G(\bar y)_i-\bar y_i|}.}
@@ -61,8 +61,8 @@ conditional expectiles or identified causal effects.
 
 The fixed point is found by damped Newton iteration on \eqn{G(y)-y=0} started from
 \eqn{G(0)} and from the limit of iteration from zero when available, or verified if
-supplied. It must be attracting (companion spectral radius below one) and the only
-attracting root among those found. This limited search does not prove global uniqueness.
+supplied. It must be locally stable (companion spectral radius below one) and the only
+locally stable root among those found. This limited search does not prove global uniqueness.
 Zero mode requires no fixed point.
 
 Intervals use the joint SALS-SFGALS coefficient covariance from \code{see_vcov_joint()}:

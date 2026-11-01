@@ -3,7 +3,7 @@
 #' A one-time Stage-2 innovation d moves all equations on impact by A d.
 #' center = "zero" starts both q-lag histories at zero and retains the original G:
 #' b_1 = G(0), x_1 = G(0) + A d; thereafter b and x both iterate G, and IRFE = x - b.
-#' center = "fixed_point" starts both histories at an attracting root ybar = G(ybar).
+#' center = "fixed_point" starts both histories at a locally stable root ybar = G(ybar).
 #' Future innovations are zero. No intercept is removed in either mode.
 #' Fixed-dimensional intervals use the joint SALS-SFGALS covariance and propagate
 #' derivatives through both complete paths. HDSFGALS supports point estimates only.
@@ -200,7 +200,7 @@ see_irfe <- function(fit, source = NULL, shock = 0.01, horizon = 12L,
 }
 
 # Spectral radius of the companion Jacobian of the state map at the constant history y
-# (below one: the fixed point is attracting).
+# (below one: the fixed point is locally stable).
 .irfe_spectral_radius <- function(map, y) {
   k <- map$k
   q <- map$q
@@ -211,7 +211,7 @@ see_irfe <- function(fit, source = NULL, shock = 0.01, horizon = 12L,
   max(Mod(eigen(comp, only.values = TRUE)$values))
 }
 
-# Initial state: zero, or the unique attracting fixed point of G found by Newton
+# Initial state: zero, or the unique locally stable fixed point of G found by Newton
 # from G(0) and from the iterated map, or a supplied fixed point (verified).
 .irfe_rest <- function(system, center, fixed_point, tol) {
   k <- length(system$equations)
@@ -243,13 +243,13 @@ see_irfe <- function(fit, source = NULL, shock = 0.01, horizon = 12L,
   rho <- vapply(roots, function(r) .irfe_spectral_radius(map, r), numeric(1))
   keep <- roots[rho < 1]
   if (!length(keep)) {
-    stop(if (length(roots)) sprintf("the fixed point found is not attracting (spectral radius %.3g); ", min(rho))
+    stop(if (length(roots)) sprintf("the fixed point found is not locally stable (spectral radius %.3g); ", min(rho))
          else "no fixed point of the reduced transition was found; ",
          "use center = \"zero\"", if (is.null(fixed_point)) " or supply fixed_point" else "",
          call. = FALSE)
   }
   distinct <- keep[!duplicated(lapply(keep, function(r) round(r, 8)))]
-  if (length(distinct) > 1L) stop("several attracting fixed points were found; supply fixed_point", call. = FALSE)
+  if (length(distinct) > 1L) stop("several locally stable fixed points were found; supply fixed_point", call. = FALSE)
   r <- distinct[[1L]]
   list(base = r, residual = max(abs(map$G(r) - r)), spectral_radius = .irfe_spectral_radius(map, r))
 }
