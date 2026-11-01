@@ -4,10 +4,9 @@ Version: 0.2.11
 Authors@R: c(
     person("Hui-Ching", "Chuang", role = c("aut", "cre"), email = "hcchuang@mail.ntpu.edu.tw"),
     person("O-Chia", "Chuang", role = "aut"),
-    person("Zaichao", "Du", role = "aut"),
-    person("Zhenhong", "Huang", role = "aut")
+    person("Zaichao", "Du", role = "aut")
   )
-Author: Hui-Ching Chuang, O-Chia Chuang, Zaichao Du, Zhenhong Huang
+Author: Hui-Ching Chuang, O-Chia Chuang, Zaichao Du
 Maintainer: Hui-Ching Chuang <hcchuang@mail.ntpu.edu.tw>
 Description: Estimation of systems of equations for expectiles using
     system asymmetric least squares and its feasible generalized extension,

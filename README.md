@@ -77,6 +77,6 @@ Chuang, Hui-Ching, O-Chia Chuang, and Zaichao Du (2026). *Estimating (High-Dimen
 }
 ```
 
-Package contributors: Hui-Ching Chuang, O-Chia Chuang, Zaichao Du, and Zhenhong Huang. ExpectSEE is distributed under the MIT license; SALES is a separate dependency with its own license.
+Package contributors: Hui-Ching Chuang, O-Chia Chuang, and Zaichao Du. ExpectSEE is distributed under the MIT license; SALES is a separate dependency with its own license.
 
 **Correspondence and package maintenance:** Hui-Ching Chuang, Department of Statistics, National Taipei University. [hcchuang@mail.ntpu.edu.tw](mailto:hcchuang@mail.ntpu.edu.tw)
