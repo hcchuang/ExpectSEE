@@ -1,0 +1,11 @@
+citHeader("To cite the companion working paper, use:")
+
+bibentry(
+  bibtype = "Unpublished",
+  title = "Estimating (High-Dimensional) Systems of Equations for Expectiles",
+  author = c(person("Hui-Ching", "Chuang"), person("O-Chia", "Chuang"),
+             person("Zaichao", "Du")),
+  year = "2026",
+  note = "Working paper",
+  url = "https://github.com/hcchuang/ExpectSEE"
+)

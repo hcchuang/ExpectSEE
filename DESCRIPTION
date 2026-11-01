@@ -1,0 +1,25 @@
+Package: ExpectSEE
+Title: Estimating Systems of Equations for Expectiles
+Version: 0.2.11
+Authors@R: c(
+    person("Hui-Ching", "Chuang", role = c("aut", "cre"), email = "hcchuang@mail.ntpu.edu.tw"),
+    person("O-Chia", "Chuang", role = "aut"),
+    person("Zaichao", "Du", role = "aut"),
+    person("Zhenhong", "Huang", role = "aut")
+  )
+Author: Hui-Ching Chuang, O-Chia Chuang, Zaichao Du, Zhenhong Huang
+Maintainer: Hui-Ching Chuang <hcchuang@mail.ntpu.edu.tw>
+Description: Estimation of systems of equations for expectiles using
+    system asymmetric least squares and its feasible generalized extension,
+    with direct-LASSO high-dimensional counterparts. Provides generated-regressor
+    covariance, fixed-dimensional specification and linear-restriction tests,
+    expanding-window penalty selection, and model-implied impulse responses
+    for expectiles. Includes a self-contained synthetic-data example for the
+    companion working paper.
+URL: https://github.com/hcchuang/ExpectSEE
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Imports:
+    SALES
